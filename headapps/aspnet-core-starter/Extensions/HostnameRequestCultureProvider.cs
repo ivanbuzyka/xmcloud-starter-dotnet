@@ -10,7 +10,8 @@ namespace Sitecore.AspNetCore.Starter.Extensions
 
       // Depeneding on the hostname used, set the culture accordingly so that
       // there is no need to use language prefix or query string parameter to switch language
-      var culture = httpContext.Request.Host.Host switch
+      var normalizedHost = httpContext.Request.Host.Host.ToLowerInvariant();
+      var culture = normalizedHost switch
       {
         "testsite.nl" => "nl-NL",
         "testsite.de" => "de-DE",
