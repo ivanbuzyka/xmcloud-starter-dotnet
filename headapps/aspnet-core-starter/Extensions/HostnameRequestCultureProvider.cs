@@ -8,7 +8,7 @@ namespace Sitecore.AspNetCore.Starter.Extensions
     {
       ArgumentNullException.ThrowIfNull(httpContext);
 
-      // Depeneding on the hostname used, set the culture accordingly so that
+      // Depending on the hostname used, set the culture accordingly so that
       // there is no need to use language prefix or query string parameter to switch language
       var normalizedHost = httpContext.Request.Host.Host.ToLowerInvariant();
       var culture = normalizedHost switch
